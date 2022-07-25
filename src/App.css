@@ -1,7 +1,15 @@
 .App {
   text-align: center;
 }
+body {
+	background: #141414;
+	color: #ffffff;
+}
 
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,7 +35,41 @@
 .App-link {
   color: #61dafb;
 }
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+}
 
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+.card {
+  max-width: 280px;
+  --bs-card-bg: #fff0;
+}
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0.7;
+	bottom: 0;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
+.fa.overlay.card-body:hover{
+  opacity: 0.9 !important;
+}
+.main-row{
+
+  justify-content: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +77,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.row.main-row {
+  max-width: 100%;
+  max-height: 80vh;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+@media  only  screen and (max-width: 4220px) {
+      /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+}
+
+.fav.overlay:hover{
+  cursor:pointer;
+}
+
+@media  only  screen and (max-width: 720px){
+  .card{
+    max-width: 100vw;
+    margin-bottom: 15px;
+  }
+
 }
